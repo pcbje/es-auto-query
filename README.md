@@ -6,14 +6,14 @@ A quick-and-dirty string to Elasticsearch query object, because writing this was
 
 #### Supported formats:
 ```
-Match _all fields: "value"
-Field specification: "field:value2"
-Wildcards: "*value*"
-Value greater than: "field > value"
+     Match _all fields: "value"
+   Field specification: "field:value2"
+             Wildcards: "*value*"
+    Value greater than: "field > value"
 Value greater or equal: "field >= value"
-Value less or equal: "field <= value"
-Value less than: "field < value"
-Nested field: "some_object.field:value"
+   Value less or equal: "field <= value"
+       Value less than: "field < value"
+          Nested field: "some_object.field:value"
 ```
 
 Clauses may be combined using " AND ".
@@ -27,7 +27,7 @@ client.search({
   body: {      
     from: 0,
     size: 10,
-    query: autoquery.generate('file.size > 1024 AND file.name:*')      
+    query: autoquery.generate('file.size > 1024 AND file.name:*.pdf')      
   }
 }).then(function(result) {
   console.log(result);
