@@ -1,0 +1,12 @@
+{
+  "name": "es-auto-query",
+  "version": "0.0.1",
+  "devDependencies": {
+    "phantomjs": "2.1.7",
+    "karma": "1.3.0",
+    "karma-jasmine": "~0.1.5",
+    "karma-phantomjs-launcher": "~0.2.3",
+    "karma-spec-reporter": "~0.0.26",
+    "karma-coverage": "~0.2.5"
+  }
+}
