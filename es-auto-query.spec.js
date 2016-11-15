@@ -127,4 +127,14 @@ describe("autoquery", function() {
       autoquery.generate('name<<b')
     }).toThrow(new Error("Clause may only contain a single operator"));
   });
+
+  it('generates match_phrase query if value contains white space.', function() {
+    expect(autoquery.generate('per hansen')).toEqual({
+      bool : {
+        must : [
+          { match_phrase : { _all : 'per hansen' } }
+        ]
+      }
+    });
+  });
 });

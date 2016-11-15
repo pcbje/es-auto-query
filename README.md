@@ -1,7 +1,7 @@
 es-auto-query
 =============
 
-A quick-and-dirty string to Elasticsearch query object, because writing this was easier than making sense of the nested query_string_query discussion. It probably has a bunch of errors and limitations, but it seems to work just fine for my needs.
+A quick-and-dirty string-to-Elasticsearch-query parser, because writing this was easier than making sense of the nested query_string_query discussion. It probably has a bunch of errors and limitations, but it seems to work just fine for my needs.
 
 
 #### Supported formats:
@@ -14,6 +14,7 @@ Value greater or equal: "field >= value"
    Value less or equal: "field <= value"
        Value less than: "field < value"
           Nested field: "some_object.field:value"
+                Phrase: "field:per hansen"
 ```
 
 Clauses may be combined using " AND ".

@@ -40,6 +40,10 @@ var autoquery = (function() {
       equal: function(clause, value) {
         var queryType = value.indexOf('*') < 0 ? 'match' : 'wildcard';
 
+        if (value.indexOf(' ') >= 0) {
+          queryType = 'match_phrase';
+        }
+
         var parts = getClauseObject(clause);
         var body = parts[0];
         var query = parts[1];
